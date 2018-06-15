@@ -27,16 +27,57 @@ package cz.alisma.alej.text.wrapping;
 import java.util.Scanner;
 
 public class WrapAndAlign {
-    private static final int MAX_WIDTH = 50;
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         ParagraphDetector pd = new ParagraphDetector(input);
-        Aligner aligner = new LeftAligner();
-
+        Aligner aligner = null;
+        int maxwidth = 0;
+        int basicwidth = 50; // hodnota pro pripad ze uzivatel nezada svoji
+         
+        for(int i = 0; i <args.length; i++) {
+        		String pozice = args[i];
+        		String [] positions = new String[2];
+        		positions = pozice.split("=");
+        		
+        		switch(positions[0]) {
+        		case "--right":
+        			aligner = new RightAligner();
+        			break;
+        		case "--center":
+        			aligner = new CenterAligner();
+        			break;
+        		case "--centre":
+        			aligner = new CenterAligner();
+        			break;
+        		case "--left":
+        			aligner = new LeftAligner();
+        			break;
+        		case "--justify":
+        			aligner = new JustifyAligner();
+        			break;
+        		case "-w":
+        			if (i + 1 == args.length) {
+        				System.out.println("You did not write a number after -w so basic value will be used");
+        					maxwidth = basicwidth;
+        					break;
+        			}
+        			maxwidth = Integer.parseInt(args[i + 1]);
+        			i++;
+        			break;
+        		case "--width":
+        			maxwidth = Integer.parseInt(positions[1]);
+        		default:
+        			System.out.println("Error. Unknown argument try it once again");
+        			continue;
+        		}
+        	}
+        
+        
+        
         while (pd.hasNextParagraph()) {
             Paragraph para = pd.nextParagraph();
-            LinePrinter line = new LinePrinter(System.out, MAX_WIDTH, aligner);
+            LinePrinter line = new LinePrinter(System.out, maxwidth, aligner);
             while (para.hasNextWord()) {
                 String word = para.nextWord();
                 line.addWord(word);
