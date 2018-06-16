@@ -27,7 +27,7 @@ public class JustifyAligner implements Aligner {
         	}
         	result.append(w);
 		if(!(pozice == pocet)){
-		  xxxxx
+		  result.append(Opakuj.opakuj(" ", mezerymezislovy));
 		}
 		pozice++;
 		if ( x > 0) {
