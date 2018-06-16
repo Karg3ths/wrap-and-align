@@ -12,7 +12,7 @@ public class JustifyAligner implements Aligner {
 	    int x = 0;
 	    if(pocet > 1) {
 	    	x = mezery % (pocet -1);
-	    	mezerymezislovy = (mezery - (x) / (pocet - 1));
+	    	mezerymezislovy = (mezery - (x)) / (pocet - 1);
 	    }else {
 	    	x = 0;
 	    }
