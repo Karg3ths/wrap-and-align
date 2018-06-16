@@ -1,0 +1,11 @@
+Pro úpravu podoby textu Wikipedie se používá vlastní znaèkovací jazyk. Èást textu vyznaèená nìkterou z wikiznaèek, vyhrazených pøesných kombinací znakù, se zobrazí zvoleným zpùsobem. Napøíklad použitím znaèky tøí apostrofù pøed a za textem:
+
+Uprostøed vìty '''oznaèený text''' tøemi apostrofy.
+se ve výsledném èlánku oznaèený text zobrazí tuènì:
+
+Uprostøed vìty oznaèený text tøemi apostrofy.
+Pøi editaci Wikipedie se tedy uvnitø vlastního textu èlánku vyskytují tyto znaèky èi wikiznaèky. Používají se nejbìžnìjší (= : *) i trochu ménì bìžné znaky (# ' [ ] { } < > ), které je možné vložit také pomocí tabulky pod editaèním oknem. Urèité druhy formátování se provádí prostøednictví šablon, speciálních pomocných stránek, oznaèených složenými závorkami: {{}}. Nìkteré další znaèky jsou pøevzaty z HTML, znaèkovacího jazyka internetových stránek, v podobì dle schématu: <kód>Formátovaný text</kód>.
+
+Formátování odstavcù se vztahuje na blok textu ukonèeného prázdným øádkem, pøíp. nìkterými znaèkami. Formátovací znaèky mohou být buï jen na zaèátku odstavce nebo v páru i na konci (napø. == u bìžných nadpisù). Formátování znakù, tedy odlišení èásti textu – vìty, slova, jednoho znaku ap. (napø. tuèným písmem) – se provádí párovými znaèkami pøed a za oznaèovaným textem.
+
+Vložení nìkterých formátovacích znaèek je možné i pomocí ikon v záhlaví editaèního okna. Editaci zcela bez používání wikiznaèek má umožnit VisualEditor.
