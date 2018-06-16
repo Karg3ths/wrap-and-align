@@ -3,7 +3,7 @@ import java.util.List;
 
 public class RightAligner implements Aligner {
 	@Override
-    public String format(List<String> words) {
+    public String format(List<String> words, int width ,int wiidthoftext) {
         StringBuilder result = new StringBuilder();
 
         boolean first = true;

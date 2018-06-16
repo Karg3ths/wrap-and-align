@@ -68,7 +68,7 @@ public class WrapAndAlign {
         		case "--width":
         			maxwidth = Integer.parseInt(positions[1]);
         		default:
-        			System.out.println("Error. Unknown argument try it once again");
+        			System.out.println("Error. Unknown argument try it once again please");
         			continue;
         		}
         	}

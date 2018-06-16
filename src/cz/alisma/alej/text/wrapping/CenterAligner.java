@@ -4,7 +4,7 @@ import java.util.List;
 
 public class CenterAligner implements Aligner  {
 	@Override
-    public String format(List<String> words) {
+    public String format(List<String> words, int width , int widthoftext) {
         StringBuilder result = new StringBuilder();
         
         
