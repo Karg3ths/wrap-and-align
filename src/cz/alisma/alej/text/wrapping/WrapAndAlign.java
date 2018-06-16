@@ -58,7 +58,9 @@ public class WrapAndAlign {
 				break;
 			case "-w":
 				if (i + 1 == args.length) {
+					System.out.println();
 					System.out.println("You did not write a number after -w so basic value will be used");
+					System.out.println();
 					maxwidth = basicwidth;
 					break;
 				}
@@ -66,9 +68,18 @@ public class WrapAndAlign {
 				i++;
 				break;
 			case "--width":
-				maxwidth = Integer.parseInt(positions[1]);
+				if (i + 1 == args.length) {
+					System.out.println();
+					System.out.println("You did not write a number after --width so basic value will be used");
+					System.out.println();
+					maxwidth = basicwidth;
+					break;
+				}
+					maxwidth = Integer.parseInt(positions[1]);
 			default:
+				System.out.println();
 				System.out.println("Error. Unknown argument try it once again please");
+				System.out.println();
 				continue;
 			}
 		}
