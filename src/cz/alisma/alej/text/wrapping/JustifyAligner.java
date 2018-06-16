@@ -4,13 +4,17 @@ import java.util.List;
 
 public class JustifyAligner implements Aligner {
 	@Override
-    public String format(List<String> words,int width) {
+    public String format(List<String> words,int width, int widthoftext) {
         StringBuilder result = new StringBuilder();
 	    int pocet = words.size();
-	    int mezery = w
-            int ;
-	    int ;
+	    int mezery = width - widthoftext;
+        int mezerymezislovy = 0 ;
+	    int x = 0;
 	    if(pocet > 1) {
+	    	x = mezery % (pocet -1);
+	    	mezerymezislovy = (mezery - (x) / (pocet - 1));
+	    }else {
+	    	x = 0;
 	    }
             
         boolean first = true;
@@ -22,11 +26,14 @@ public class JustifyAligner implements Aligner {
         		first = false;
         	}
         	result.append(w);
-		if(!(position == number)){
+		if(!(pozice == pocet)){
 		  xxxxx
 		}
-		position++;
-		if (
+		pozice++;
+		if ( x > 0) {
+			result.append(" ");
+			x--;
+		}
         }
 
         return result.toString();
