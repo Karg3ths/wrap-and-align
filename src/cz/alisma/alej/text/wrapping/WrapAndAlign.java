@@ -32,14 +32,15 @@ public class WrapAndAlign {
 		Scanner input = new Scanner(System.in);
 		ParagraphDetector pd = new ParagraphDetector(input);
 		Aligner aligner = null;
-		int maxwidth = 0;
+		int maxwidth = 0;	 
 		int basicwidth = 50; // hodnota pro pripad ze uzivatel nezada svoji
 
 		for (int i = 0; i < args.length; i++) {
 			String pozice = args[i];
 			String[] positions = new String[2];
 			positions = pozice.split("=");
-
+			
+			//varianta c.1
 			switch (positions[0]) {
 			case "--right":
 				aligner = new RightAligner();
@@ -76,13 +77,57 @@ public class WrapAndAlign {
 					break;
 				}
 					maxwidth = Integer.parseInt(positions[1]);
+					break;
 			default:
 				System.out.println();
 				System.out.println("Error. Unknown argument try it once again please");
 				System.out.println();
-				continue;
-			}
-		}
+				break;
+			} 
+			//varianta c.2 pres switch se mi to libi vic :) (jsem se nudil)
+			/*
+			if("--left".equals(args[i])) {
+				aligner = new LeftAligner();
+				
+			} else if("--right".equals(args[i])) {
+				aligner = new RightAligner();
+				
+			}else if("--justify".equals(args[i])) {
+				aligner = new JustifyAligner();
+				break;
+			}else if("--center".equals(args[i]) || "--centre".equals(args[i])) {
+				aligner = new CenterAligner();
+				
+			}else if("--width".equals(args[i])) {
+				if (i + 1 == args.length) {
+					System.out.println();
+					System.out.println("You did not write a number after --width so basic value will be used");
+					System.out.println();
+					maxwidth = basicwidth;
+					break;
+				}else {
+					maxwidth = Integer.parseInt(positions[1]);
+					break;
+				}
+			}else if("-w".equals(args[i])) {
+				if (i + 1 == args.length) {
+					System.out.println();
+					System.out.println("You did not write a number after -w so basic value will be used");
+					System.out.println();
+					maxwidth = basicwidth;
+					break;
+				}
+				maxwidth = Integer.parseInt(args[i + 1]);
+				i++;
+				break;
+			}else {
+				System.out.println();
+				System.out.println("Error. Unknown argument try it once again please");
+				System.out.println();
+				break;
+			}*/
+		} 
+			
 
 		while (pd.hasNextParagraph()) {
 			Paragraph para = pd.nextParagraph();
